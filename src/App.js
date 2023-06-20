@@ -10,6 +10,8 @@ function App() {
       <header>
       <NavBar />  
 
+      {/** Main - Image */}
+
         <MountainDetails />
         <NationalParks />
       </header>

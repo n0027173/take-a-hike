@@ -17,7 +17,10 @@ function MountainDetails() {
           getData()
       },[]);
   return (
-    <div>
+    <div className="hero">
+
+      <div> 
+      </div>
 
 
     {data.mountains && data.mountains.map(mountain => (
