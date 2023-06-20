@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import HeroContent from './HeroContent';
 
 function NationalParks() {
   const [data,setData]=useState([]);
@@ -18,6 +19,7 @@ function NationalParks() {
       },[]);
   return (
     <div>
+<HeroContent />
       <table class="table table-striped" >
 <thead>
   <tr>

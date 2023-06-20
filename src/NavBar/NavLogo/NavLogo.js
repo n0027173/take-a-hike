@@ -1,5 +1,5 @@
 const NavLogo = () => {
-    return (  );
+    return ( <img src="./images/Logo.jpg" /> );
 }
  
 export default NavLogo;

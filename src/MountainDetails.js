@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import HeroContent from './HeroContent';
 
 function MountainDetails() {
   const [data,setData]=useState([]);
@@ -18,7 +19,7 @@ function MountainDetails() {
       },[]);
   return (
     <div>
-
+      <HeroContent />
 
     {data.mountains && data.mountains.map(mountain => (
       <ul key={mountain.name} className="">

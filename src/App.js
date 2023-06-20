@@ -8,11 +8,11 @@ function App() {
   return (
     <div>
       <header>
-      <NavBar />  
+        <NavBar /> 
 
-        <MountainDetails />
-        <NationalParks />
       </header>
+      <MountainDetails />
+      <NationalParks />
     </div>
   );
 }
