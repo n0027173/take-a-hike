@@ -2,25 +2,23 @@ import React, { useState, useEffect } from 'react';
 import HeroContent from './HeroContent';
 
 function MountainDetails() {
-  const [data,setData]=useState([]);
-    function getData(){
-        fetch("./mountains.json")
-        .then(response => {
+  const [data, setData] = useState([]);
+  function getData() {
+    fetch("./mountains.json")
+      .then((response) => {
         // console.log(response)
-          return response.json()
-        })
-        .then(response => {
-          setData(response)
-          // console.log(response)
-        })
-      }
-        useEffect(()=>{
-          getData()
-      },[]);
+        return response.json();
+      })
+      .then((response) => {
+        setData(response);
+        // console.log(response)
+      });
+  }
+  useEffect(() => {
+    getData();
+  }, []);
   return (
-    <div>
-      <HeroContent />
-
+   <div>
     {data.mountains && data.mountains.map(mountain => (
       <ul key={mountain.name} className="">
          <li>
@@ -36,16 +34,12 @@ function MountainDetails() {
               <li>Latitude: {mountain.coords.lat}</li>
               <li>Longitude: {mountain.coords.lng}</li>
             </ul>
-
-           </div>
-
-        </li>
-
+          </div>
+          </li>
       </ul>
-      ))} 
-    </div>
-
-  )
+      ))}
+    </div> 
+  );
 }
- 
+
 export default MountainDetails;
