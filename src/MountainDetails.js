@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import MountainDetailsHeroContent from "./MountainDetailsHeroContent";
 
 function MountainDetails() {
-  const [data, setData] = useState([]);
+  const [mountains, setMountains] = useState([]);
   const [selectedMountain, setSelectedMountain] = useState([]);
+
+  // Create const with mapped mountain names.
 
   function getData() {
     fetch("./mountains.json")
@@ -11,40 +13,42 @@ function MountainDetails() {
         return response.json();
       })
       .then((response) => {
-        setData(response);
+        setMountains(response.mountains);
       });
   }
   useEffect(() => {
     getData();
   }, []);
 
-
   return (
     <div>
-      <MountainDetailsHeroContent selectedMountain={selectedMountain} setSelectedMountain={setSelectedMountain}/>
-      {data.mountains &&
-        data.mountains.map((mountain) => (
-          <ul key={mountain.name} className="">
-            <li>
+      <MountainDetailsHeroContent
+        selectedMountain={selectedMountain}
+        setSelectedMountain={setSelectedMountain}
+        mountains={mountains}
+      />
+      {mountains.map((mountain) => (
+        <ul key={mountain.name} className="">
+          <li>
+            <div className="">
+              <h2>{mountain.name}</h2>
               <div className="">
-                <h2>{mountain.name}</h2>
-                <div className="">
-                  <img
-                    src={"./images/mountains/" + mountain.img}
-                    alt={mountain.name}
-                  />
-                  <p>{mountain.desc}</p>
-                </div>
-                <ul className="">
-                  <li>Elevation: {mountain.elevation}</li>
-                  <li>Effort: {mountain.effort}</li>
-                  <li>Latitude: {mountain.coords.lat}</li>
-                  <li>Longitude: {mountain.coords.lng}</li>
-                </ul>
+                <img
+                  src={"./images/mountains/" + mountain.img}
+                  alt={mountain.name}
+                />
+                <p>{mountain.desc}</p>
               </div>
-            </li>
-          </ul>
-        ))}
+              <ul className="">
+                <li>Elevation: {mountain.elevation}</li>
+                <li>Effort: {mountain.effort}</li>
+                <li>Latitude: {mountain.coords.lat}</li>
+                <li>Longitude: {mountain.coords.lng}</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      ))}
     </div>
   );
 }

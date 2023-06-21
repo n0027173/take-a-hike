@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import "./HeroContent.css";
 import "./MountainDetails";
 
-const MountainDetailsHeroContent = (props) => {
+const MountainDetailsHeroContent = ({
+  mountains,
+  setMountains,
+  setSelectedMountain,
+}) => {
   const handleClick = () => {};
   const mountainSelections = [
     {
@@ -23,7 +27,7 @@ const MountainDetailsHeroContent = (props) => {
 
   const onChange = (ev) => {
     const val = ev.target.value;
-    props.setSelectedMountain(val);
+    setSelectedMountain(val);
     console.log(val);
   };
   return (
@@ -39,9 +43,9 @@ const MountainDetailsHeroContent = (props) => {
           </label>
           <select id="mtnsDDL" onChange={onChange}>
             <option disabled="">-- Select One --</option>
-            {mountainSelections.map((mountain, index) => (
-              <option value={mountain.value} key={index}>
-                {mountain.value}
+            {mountains.map((mountain, index) => (
+              <option value={mountain.name} key={index}>
+                {mountain.name}
               </option>
             ))}
           </select>
