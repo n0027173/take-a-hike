@@ -20,7 +20,7 @@ function NationalParks() {
   return (
     <div>
 <HeroContent />
-      <table class="table table-striped" >
+      <table className="table table-striped" >
 <thead>
   <tr>
     <th scope="col">Location Name</th>
