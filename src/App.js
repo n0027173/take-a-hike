@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import NavBar from "./NavBar/NavBar";
-import MountainDetails from "./MountainDetails";
+import MountainPage from "./MountainPage";
 import NationalParks from "./NationalParks";
 import HeroContent from "./HeroContent";
 
@@ -13,7 +13,7 @@ function App() {
       case "Home":
         return <HeroContent setActiveTab={setActiveTab} />;
       case "Mountains":
-        return <MountainDetails setActiveTab={setActiveTab} />;
+        return <MountainPage setActiveTab={setActiveTab} />;
       case "National Parks":
         return <NationalParks setActiveTab={setActiveTab} />;
       default:

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./HeroContent.css";
-import "./MountainDetails";
+import MountainDetails from "./MountainDetails";
 
 const MountainDetailsHeroContent = ({
   mountains,
-  setMountains,
   setSelectedMountain,
+  filteredMountainFunction
 }) => {
   const handleClick = () => {};
   const mountainSelections = [
@@ -28,7 +28,8 @@ const MountainDetailsHeroContent = ({
   const onChange = (ev) => {
     const val = ev.target.value;
     setSelectedMountain(val);
-    console.log(val);
+    filteredMountainFunction();
+    // console.log(val);
   };
   return (
     <section className="hero">

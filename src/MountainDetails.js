@@ -1,32 +1,13 @@
-import React, { useState, useEffect } from "react";
-import MountainDetailsHeroContent from "./MountainDetailsHeroContent";
+// import React, { useState, useEffect } from "react";
 
-function MountainDetails() {
-  const [mountains, setMountains] = useState([]);
-  const [selectedMountain, setSelectedMountain] = useState([]);
+function MountainDetails({
+  mountains, selectedMountain
+}) {
 
-  // Create const with mapped mountain names.
-
-  function getData() {
-    fetch("./mountains.json")
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        setMountains(response.mountains);
-      });
-  }
-  useEffect(() => {
-    getData();
-  }, []);
-
+// //  console.log(selectedMountain)
+// console.log(mountains)
   return (
     <div>
-      <MountainDetailsHeroContent
-        selectedMountain={selectedMountain}
-        setSelectedMountain={setSelectedMountain}
-        mountains={mountains}
-      />
       {mountains.map((mountain) => (
         <ul key={mountain.name} className="">
           <li>

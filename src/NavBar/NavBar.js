@@ -3,7 +3,7 @@
 
 const NavBar = (props) => {
   const handleLinkClick = (linkName) => {
-    console.log(linkName);
+    // console.log(linkName);
     props.setActiveTab(linkName);
   };
 
