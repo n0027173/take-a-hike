@@ -3,6 +3,8 @@ import MountainDetailsHeroContent from "./MountainDetailsHeroContent";
 
 function MountainDetails() {
   const [data, setData] = useState([]);
+  const [selectedMountain, setSelectedMountain] = useState([]);
+
   function getData() {
     fetch("./mountains.json")
       .then((response) => {
@@ -15,9 +17,11 @@ function MountainDetails() {
   useEffect(() => {
     getData();
   }, []);
+
+
   return (
     <div>
-      <MountainDetailsHeroContent />
+      <MountainDetailsHeroContent selectedMountain={selectedMountain} setSelectedMountain={setSelectedMountain}/>
       {data.mountains &&
         data.mountains.map((mountain) => (
           <ul key={mountain.name} className="">
