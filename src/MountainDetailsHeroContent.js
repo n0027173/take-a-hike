@@ -1,12 +1,13 @@
 import "./HeroContent.css";
+import "./MountainDetails";
 
-const HeroContent = () => {
+const MountainDetailsHeroContent = () => {
   const handleClick = () => {};
 
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1 className="hero-title">Take a Hike and Discover the World!</h1>
+        <h1 className="hero-title">Explore Mountains</h1>
         <h2 className="hero-subtitle">
           We offer the best adventure holidays and tailor-made trips!
         </h2>
@@ -22,4 +23,4 @@ const HeroContent = () => {
   );
 };
 
-export default HeroContent;
+export default MountainDetailsHeroContent;

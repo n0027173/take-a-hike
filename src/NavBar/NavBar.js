@@ -1,23 +1,11 @@
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { fas} from '@fortawesome/free-solid-svg-icons';
 
-import { useEffect } from "react";
-
-// import {FontAwesomeIcon } from '@fontawesome/react-fontawesome';
 const NavBar = (props) => {
   const handleLinkClick = (linkName) => {
     console.log(linkName);
     props.setActiveTab(linkName);
   };
-
-  //   console.log("Outside of the Handler ", activeTab);
-  //   useEffect(()=>{
-
-  //     getData()
-
-  // },[]);
-
-  // const [isActive, setIsActive] = useState(1);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white">

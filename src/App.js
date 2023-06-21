@@ -11,21 +11,13 @@ function App() {
   function renderContent(activeTab) {
     switch (activeTab) {
       case "Home":
-        return (
-          <HeroContent setActiveTab={setActiveTab} activeTab={activeTab} />
-        );
+        return <HeroContent setActiveTab={setActiveTab} />;
       case "Mountains":
-        return (
-          <MountainDetails setActiveTab={setActiveTab} activeTab={activeTab} />
-        );
+        return <MountainDetails setActiveTab={setActiveTab} />;
       case "National Parks":
-        return (
-          <NationalParks setActiveTab={setActiveTab} activeTab={activeTab} />
-        );
+        return <NationalParks setActiveTab={setActiveTab} />;
       default:
-        return (
-          <HeroContent setActiveTab={setActiveTab} activeTab={activeTab} />
-        );
+        return <HeroContent setActiveTab={setActiveTab} />;
     }
   }
 
@@ -33,10 +25,7 @@ function App() {
     <div>
       <header>
         <NavBar setActiveTab={setActiveTab} />
-        {/* <HeroContent /> */}
       </header>
-      {/* <MountainDetails />
-      <NationalParks /> */}
       {renderContent(activeTab)}
     </div>
   );
