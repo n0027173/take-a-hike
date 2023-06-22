@@ -1,5 +1,7 @@
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { fas} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { useState } from 'react';
 
 const NavBar = (props) => {
   const handleLinkClick = (linkName) => {
@@ -7,21 +9,38 @@ const NavBar = (props) => {
     props.setActiveTab(linkName);
   };
 
+  const [collapsed, setCollapsed] = useState(true)
+  const toggleNavbar = () => setCollapsed(!collapsed)
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white">
       <div className="container-fluid">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#navbarExample01"
-          aria-controls="navbarExample01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i className="fas fa-bars"></i>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarExample01">
+        <div>
+          <Navbar color="faded" light>
+            <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+            <NavbarBrand href="/" className="mr-auto">Take a Hike</NavbarBrand>
+            <Collapse isOpen={!collapsed} navbar>
+              <Nav navbar>
+                <NavItem>
+                  <NavLink onClick={(e) => {
+                    handleLinkClick("Home");
+                  }}>Home</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink onClick={(e) => {
+                    handleLinkClick("Mountains");
+                  }}>Mountains</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink onClick={(e) => {
+                    handleLinkClick("National Parks");
+                  }}>National Parks</NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
+        </div>
+        {/* <div className="collapse navbar-collapse" id="navbarExample01">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li
               className="nav-item active"
@@ -54,8 +73,8 @@ const NavBar = (props) => {
               </a>
             </li>
           </ul>
-        </div>
-      </div>
+        </div>*/}
+      </div> 
     </nav>
   );
 };

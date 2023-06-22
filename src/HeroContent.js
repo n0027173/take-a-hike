@@ -1,9 +1,11 @@
 import "./HeroContent.css";
+import AboutUs from "./AboutUs";
 
 const HeroContent = () => {
   const handleClick = () => {};
 
   return (
+    <>
     <section className="hero">
       <div className="hero-content">
         <h1 className="hero-title">Take a Hike and Discover the World!</h1>
@@ -19,6 +21,11 @@ const HeroContent = () => {
         </button>
       </div>
     </section>
+    <main>
+      <AboutUs />
+
+    </main>
+    </>
   );
 };
 
