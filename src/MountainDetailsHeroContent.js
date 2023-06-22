@@ -1,36 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import "./HeroContent.css";
-import MountainDetails from "./MountainDetails";
 
 const MountainDetailsHeroContent = ({
   mountains,
-  setSelectedMountain,
-  filteredMountainFunction
+  filteredMountainFunction,
 }) => {
   const handleClick = () => {};
-  const mountainSelections = [
-    {
-      label: "Mt. Jefferson",
-      value: "Mt. Jefferson",
-    },
-
-    {
-      label: "Mt. Washington",
-      value: "Mt. Washington",
-    },
-
-    {
-      label: "Mt. Everest",
-      value: "Mt. Everest",
-    },
-  ];
 
   const onChange = (ev) => {
     const val = ev.target.value;
-    setSelectedMountain(val);
-    filteredMountainFunction();
-    // console.log(val);
+
+    filteredMountainFunction(val);
   };
+
   return (
     <section className="hero">
       <div className="hero-content">

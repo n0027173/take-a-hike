@@ -1,11 +1,4 @@
-// import React, { useState, useEffect } from "react";
-
-function MountainDetails({
-  mountains, selectedMountain
-}) {
-
-// //  console.log(selectedMountain)
-// console.log(mountains)
+function MountainDetails({ mountains }) {
   return (
     <div>
       {mountains.map((mountain) => (

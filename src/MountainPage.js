@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
-import MountainDetails from "./MountainDetails";
 import MountainDetailsHeroContent from "./MountainDetailsHeroContent";
 
 function MountainPage() {
   const [mountains, setMountains] = useState([]);
-  const [selectedMountain, setSelectedMountain] = useState([]);
   const [filterMountains, setFilterMountains] = useState([]);
-
-  // Create const with mapped mountain names.
 
   function getData() {
     fetch("./mountains.json")
@@ -22,31 +18,20 @@ function MountainPage() {
     getData();
   }, []);
 
-  function filteredMountainFunction() {
-    const filteredMountain = mountains.filter((mountain) => mountain.name.includes(selectedMountain));
-    setFilterMountains(filteredMountain) 
-    console.log(filterMountains)  
+  function filteredMountainFunction(selectedDropdownMountain) {
+    const filteredMountain = mountains.filter((mountain) =>
+      mountain.name.includes(selectedDropdownMountain)
+    );
+    setFilterMountains(filteredMountain);
+    console.log(filterMountains);
   }
-  useEffect(() => {
-    filteredMountainFunction();
-    // setFilterMountains()
-  }, []);
-  // useEffect(() => {
-  //   // const filteredMountains = mountains.filter((mountain) =>
-  //   //   mountain.name.toLowerCase().includes(selectedMountain.toLowerCase())
-  //   const filteredMountain = mountains.filter((mountain) => mountain.name.includes(selectedMountain));
-  //   setFilteredMountains(filteredMountains);
-  // }, [selectedMountain, mountains]);
 
   return (
     <div>
       <MountainDetailsHeroContent
-        selectedMountain={selectedMountain}
-        setSelectedMountain={setSelectedMountain}
         mountains={mountains}
         filteredMountainFunction={filteredMountainFunction}
       />
-      {/* <MountainDetails mountains = {mountains} selectedMountain={selectedMountain} filteredMountainFunction={filteredMountainFunction} /> */}
       {filterMountains.map((mountain) => (
         <div key={mountain.name}>
           <h3>{mountain.name}</h3>
