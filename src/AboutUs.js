@@ -2,8 +2,9 @@ import "./AboutUs.css";
 
 const AboutUs = () => {
     return ( 
-        <div className="about-wrapper">
-            <h1>Welcome to Take a Hike!</h1>
+        <div className="flex-container">
+            <div class="flex-items">
+            <h1>About Take a Hike</h1>
             <p>
             At Take a Hike, we believe that the great outdoors are calling your name, and we're here to help you answer that call! 
             Our website is a gateway to the breathtaking beauty of national parks and majestic mountains that await your exploration.
@@ -27,6 +28,7 @@ const AboutUs = () => {
             <p>
             Let the mountains beckon you, and let the national parks amaze you. Welcome to Take a Hike – your gateway to extraordinary experiences in the heart of nature!
             </p>
+            </div>
         </div>
      );
 }

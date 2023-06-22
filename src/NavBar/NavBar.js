@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { useState } from 'react';
 
@@ -21,15 +19,18 @@ const NavBar = (props) => {
             <NavbarBrand href="/" className="mr-auto">Take a Hike</NavbarBrand>
             <Collapse isOpen={!collapsed} navbar>
               <Nav navbar>
-                <NavItem>
+                {/* <NavItem>
                   <NavLink onClick={(e) => {
                     handleLinkClick("Home");
                   }}>Home</NavLink>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <NavLink onClick={(e) => {
                     handleLinkClick("Mountains");
                   }}>Mountains</NavLink>
+                </NavItem>
+                <NavItem>
+                <NavLink href="/MountainPage">Components</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink onClick={(e) => {
@@ -40,40 +41,6 @@ const NavBar = (props) => {
             </Collapse>
           </Navbar>
         </div>
-        {/* <div className="collapse navbar-collapse" id="navbarExample01">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li
-              className="nav-item active"
-              onClick={(e) => {
-                handleLinkClick("Home");
-              }}
-            >
-              <a className="nav-link" aria-current="page" href="#">
-                Home
-              </a>
-            </li>
-            <li
-              className="nav-item"
-              onClick={(e) => {
-                handleLinkClick("Mountains");
-              }}
-            >
-              <a className="nav-link" href="#">
-                Mountains
-              </a>
-            </li>
-            <li
-              className="nav-item"
-              onClick={(e) => {
-                handleLinkClick("National Parks");
-              }}
-            >
-              <a className="nav-link" href="#">
-                National Parks
-              </a>
-            </li>
-          </ul>
-        </div>*/}
       </div> 
     </nav>
   );
