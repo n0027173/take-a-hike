@@ -1,36 +1,27 @@
 import React, { useState, useEffect } from "react";
-import MountainDetailsHeroContent from "./MountainDetailsHeroContent";
+import NationalParksHeroContent from "./NationalParksHeroContent";
+import NationalParksDetails from "./NationalParksDetails";
 
-function MountainPage() {
-  const [mountains, setMountains] = useState([]);
-  const [filterMountains, setFilterMountains] = useState([]);
-
-  function getData() {
-    fetch("./mountains.json")
+function NationalParksPage() {
+  const [nationalParkData, setNationalParkData] = useState([]);
+  function getNationalParkData() {
+    fetch("./nationalparks.json")
       .then((response) => {
         return response.json();
       })
       .then((response) => {
-        setMountains(response.mountains);
+        setNationalParkData(response);
       });
   }
   useEffect(() => {
-    getData();
+    getNationalParkData();
   }, []);
-
-  function filteredMountainFunction(selectedDropdownMountain) {
-    const filteredMountain = mountains.filter((mountain) =>
-      mountain.name.includes(selectedDropdownMountain)
-    );
-    setFilterMountains(filteredMountain);
-    console.log(filterMountains);
-  }
-
   return (
     <div>
-      <NationalParksDetailsHeroContent />
+      <NationalParksHeroContent />
+      <NationalParksDetails nationalParkData={nationalParkData} />
     </div>
   );
 }
 
-export default MountainPage;
+export default NationalParksPage;

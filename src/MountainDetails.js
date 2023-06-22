@@ -14,10 +14,10 @@ function MountainDetails({ mountains }) {
                 <p>{mountain.desc}</p>
               </div>
               <ul className="">
-                <li>Elevation: {mountain.elevation}</li>
+                {/* <li>Elevationgggg: {mountain.elevation}</li>
                 <li>Effort: {mountain.effort}</li>
-                <li>Latitude: {mountain.coords.lat}</li>
-                <li>Longitude: {mountain.coords.lng}</li>
+                <li>Latitude hgh: {mountain.coords.lat}</li>
+                <li>Longitude: {mountain.coords.lng}</li> */}
               </ul>
             </div>
           </li>
