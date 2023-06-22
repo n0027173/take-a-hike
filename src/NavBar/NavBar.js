@@ -11,7 +11,6 @@ import { useState } from "react";
 
 const NavBar = (props) => {
   const handleLinkClick = (linkName) => {
-    // console.log(linkName);
     props.setActiveTab(linkName);
   };
 
@@ -43,6 +42,9 @@ const NavBar = (props) => {
                     Mountains
                   </NavLink>
                 </NavItem>
+                {/* <NavItem>
+                  <NavLink href="/MountainPage">Components</NavLink>
+                </NavItem> */}
                 <NavItem>
                   <NavLink
                     onClick={(e) => {

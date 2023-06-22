@@ -3,7 +3,7 @@ import "./AboutUs.css";
 const AboutUs = () => {
   return (
     <div id="container">
-      <div class="box" id="bluebox">
+      <div className="box" id="bluebox">
         <h1>About Take a Hike</h1>
         <p>
           At Take a Hike, we believe that the great outdoors are calling your
