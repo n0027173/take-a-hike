@@ -2,7 +2,10 @@ import "./HeroContent.css";
 import AboutUs from "./AboutUs";
 
 const HeroContent = () => {
-  const handleClick = () => {};
+const handleLinkClick = (linkName) => {
+  // console.log(linkName);
+  props.setActiveTab(linkName);
+};
 
   return (
     <>

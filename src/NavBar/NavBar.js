@@ -44,9 +44,6 @@ const NavBar = (props) => {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/MountainPage">Components</NavLink>
-                </NavItem>
-                <NavItem>
                   <NavLink
                     onClick={(e) => {
                       handleLinkClick("National Parks");
