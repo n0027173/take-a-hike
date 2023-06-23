@@ -1,5 +1,8 @@
-function NationalParksDetails({ nationalParkData, filterParksByLocation }) {
-  console.log(filterParksByLocation);
+function NationalParksDetails({
+  nationalParkData,
+  filterParksByLocation,
+  filterParksByType,
+}) {
   return (
     <div>
       <table className="table table-striped">
@@ -23,7 +26,15 @@ function NationalParksDetails({ nationalParkData, filterParksByLocation }) {
                   <td>{parkData.ZipCode}</td>
                 </tr>
               ))
-            : ""}
+            : filterParksByType.map((parkData) => (
+                <tr key={parkData.LocationID}>
+                  <th scope="row">{parkData.LocationName}</th>
+                  <td>{parkData.Address}</td>
+                  <td>{parkData.City}</td>
+                  <td>{parkData.State}</td>
+                  <td>{parkData.ZipCode}</td>
+                </tr>
+              ))}
         </tbody>
       </table>
     </div>

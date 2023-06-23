@@ -6,6 +6,7 @@ const NationalParksHeroContent = ({
   nationalParkData,
   parkTypeOptionsList,
   filteredParkLocationFunction,
+  filteredParkTypeFunction,
 }) => {
   const handleFilterChange = (ev) => {
     const filterValue = ev.target.value;
@@ -21,6 +22,12 @@ const NationalParksHeroContent = ({
     const nationalParkLocationVal = ev.target.value;
 
     filteredParkLocationFunction(nationalParkLocationVal);
+  };
+
+  const onTypeChange = (ev) => {
+    const nationalParkLocationVal = ev.target.value;
+
+    filteredParkTypeFunction(nationalParkLocationVal);
   };
 
   function RenderSecondInput(filterValue, nationalParkData) {
@@ -48,7 +55,7 @@ const NationalParksHeroContent = ({
             <label htmlFor="mtnsDDL" id="mtnsDDLLabel" className="m-3">
               Select a Park Type:
             </label>
-            <select id="mtnsDDL" onChange={onChange}>
+            <select id="mtnsDDL" onChange={onTypeChange}>
               <option disabled="">-- Select A Park Type--</option>
               {parkTypeOptionsList.map((option, index) => (
                 <option value={option} key={index}>

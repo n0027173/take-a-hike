@@ -11,6 +11,10 @@ function NationalParksPage() {
     nationalParkData,
   ]);
 
+  const [filterParksByType, setFilterParksByType] = useState([
+    nationalParkData,
+  ]);
+
   function getNationalParkData() {
     fetch("./nationalparks.json")
       .then((response) => {
@@ -45,7 +49,13 @@ function NationalParksPage() {
     setFilterParksByLocation(filteredLocation);
   }
 
-  // console.log(nationalParkData);
+  function filteredParkTypeFunction(selectedDropdownType) {
+    setFilterParksByLocation("");
+    const filteredType = nationalParkData.filter((type) =>
+      type.LocationName.includes(selectedDropdownType)
+    );
+    setFilterParksByType(filteredType);
+  }
 
   return (
     <div>
@@ -56,6 +66,7 @@ function NationalParksPage() {
           parkTypeOptionsList={parkTypeOptionsList}
           nationalParkData={nationalParkData}
           filteredParkLocationFunction={filteredParkLocationFunction}
+          filteredParkTypeFunction={filteredParkTypeFunction}
         />
       ) : (
         ""
@@ -64,6 +75,7 @@ function NationalParksPage() {
       <NationalParksDetails
         nationalParkData={nationalParkData}
         filterParksByLocation={filterParksByLocation}
+        filterParksByType={filterParksByType}
       />
     </div>
   );
