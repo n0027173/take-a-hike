@@ -23,7 +23,7 @@ function NationalParksPage() {
   }, []);
 
   function getParkTypesData() {
-    fetch("./parkstypes.json")
+    fetch("./parktypes.json")
       .then((response) => {
         return response.json();
       })
