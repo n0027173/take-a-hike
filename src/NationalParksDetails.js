@@ -1,8 +1,5 @@
-function NationalParksDetails({
-  nationalParkData,
-  nationalParkFilterOption,
-  setNationalParkFilterOption,
-}) {
+function NationalParksDetails({ nationalParkData, filterParksByLocation }) {
+  console.log(filterParksByLocation);
   return (
     <div>
       <table className="table table-striped">

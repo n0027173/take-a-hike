@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./styles/App.css";
 import NavBar from "./NavBar/NavBar";
 import MountainPage from "./MountainPage";
 import NationalParksPage from "./NationalParksPage";
-import HeroContent from "./HeroContent";
+import HomePageHeroContent from "./HomePageHeroContent";
 
 function App() {
   const [activeTab, setActiveTab] = useState("Home");
@@ -11,13 +11,13 @@ function App() {
   function renderContent(activeTab) {
     switch (activeTab) {
       case "Home":
-        return <HeroContent setActiveTab={setActiveTab} />;
+        return <HomePageHeroContent setActiveTab={setActiveTab} />;
       case "Mountains":
         return <MountainPage setActiveTab={setActiveTab} />;
       case "National Parks":
         return <NationalParksPage setActiveTab={setActiveTab} />;
       default:
-        return <HeroContent setActiveTab={setActiveTab} />;
+        return <HomePageHeroContent setActiveTab={setActiveTab} />;
     }
   }
 

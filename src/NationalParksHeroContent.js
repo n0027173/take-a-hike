@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import "./HeroContent.css";
+import "./styles/HeroContent.css";
 
 const NationalParksHeroContent = ({
   nationalParkFilterOption,
@@ -14,9 +13,9 @@ const NationalParksHeroContent = ({
   };
 
   function onChange() {
-    console.log("You hit onChange");
+    "";
   }
- 
+
   function RenderSecondInput(filterValue, nationalParkData) {
     switch (filterValue) {
       case "Location":
@@ -53,7 +52,7 @@ const NationalParksHeroContent = ({
           </div>
         );
       default:
-        return <div>Hmm, you hit default!</div>;
+        return "";
     }
   }
   return (

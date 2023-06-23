@@ -1,12 +1,10 @@
 import React from "react";
-import "./HeroContent.css";
+import "./styles/HeroContent.css";
 
 const MountainDetailsHeroContent = ({
   mountains,
   filteredMountainFunction,
 }) => {
-  const handleClick = () => {};
-
   const onChange = (ev) => {
     const val = ev.target.value;
 

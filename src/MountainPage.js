@@ -1,4 +1,4 @@
-import "./MountainPage.css";
+import "./styles/MountainPage.css";
 import React, { useState, useEffect } from "react";
 import MountainDetailsHeroContent from "./MountainDetailsHeroContent";
 
