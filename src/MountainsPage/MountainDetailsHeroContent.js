@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/HeroContent.css";
+import "../styles/HeroContent.css";
 
 const MountainDetailsHeroContent = ({
   mountains,

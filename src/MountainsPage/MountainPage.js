@@ -1,4 +1,4 @@
-import "./styles/MountainPage.css";
+import "../styles/MountainPage.css";
 import React, { useState, useEffect } from "react";
 import MountainDetailsHeroContent from "./MountainDetailsHeroContent";
 
@@ -32,7 +32,7 @@ function MountainPage() {
         mountains={mountains}
         filteredMountainFunction={filteredMountainFunction}
       />
-      <div class="support-grid"></div>
+      <div className="support-grid"></div>
       <div className="band">
         {filterMountains.map((mountain) => (
           <div key={mountain.name} className="item-4">

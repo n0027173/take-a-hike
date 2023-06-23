@@ -73,7 +73,6 @@ function NationalParksPage() {
       )}
 
       <NationalParksDetails
-        nationalParkData={nationalParkData}
         filterParksByLocation={filterParksByLocation}
         filterParksByType={filterParksByType}
       />

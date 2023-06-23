@@ -1,9 +1,8 @@
-import "./styles/HeroContent.css";
-import AboutUs from "./AboutUs";
+import "../styles/HeroContent.css";
 
-const HomePageHeroContent = (props) => {
+const HomePageHeroContent = ({ setActiveTab }) => {
   const handleLinkClickButton = (linkName) => {
-    props.setActiveTab(linkName);
+    setActiveTab(linkName);
   };
   return (
     <>
@@ -34,9 +33,6 @@ const HomePageHeroContent = (props) => {
           </button>
         </div>
       </section>
-      <main>
-        <AboutUs />
-      </main>
     </>
   );
 };

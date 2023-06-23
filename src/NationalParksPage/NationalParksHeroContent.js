@@ -1,4 +1,4 @@
-import "./styles/HeroContent.css";
+import "../styles/HeroContent.css";
 
 const NationalParksHeroContent = ({
   nationalParkFilterOption,
@@ -12,10 +12,6 @@ const NationalParksHeroContent = ({
     const filterValue = ev.target.value;
     setNationalParkFilterOption(filterValue);
     RenderSecondInput(filterValue, nationalParkData);
-  };
-
-  const onChange = (ev) => {
-    "";
   };
 
   const onLocationChange = (ev) => {
@@ -39,7 +35,7 @@ const NationalParksHeroContent = ({
               Select a Location:
             </label>
             <select id="mtnsDDL" onChange={onLocationChange}>
-              <option disabled="">-- Select A Location --</option>
+              <option disabled="">-- Select a Location --</option>
               {nationalParkData.map((park, index) => (
                 <option value={park.State} key={index}>
                   {park.State}
