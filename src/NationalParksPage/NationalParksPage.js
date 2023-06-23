@@ -21,7 +21,7 @@ function NationalParksPage() {
         return response.json();
       })
       .then((response) => {
-        setNationalParkData(response.parks);
+        setNationalParkData(response.parks.sort());
       });
   }
   useEffect(() => {
@@ -34,7 +34,7 @@ function NationalParksPage() {
         return response.json();
       })
       .then((response) => {
-        setParkTypeOptionsList(response);
+        setParkTypeOptionsList(response.sort());
       });
   }
 
