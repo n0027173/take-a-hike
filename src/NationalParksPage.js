@@ -4,10 +4,12 @@ import NationalParksDetails from "./NationalParksDetails";
 
 function NationalParksPage() {
   const [nationalParkData, setNationalParkData] = useState([]);
-
   const [parkTypeOptionsList, setParkTypeOptionsList] = useState([]);
-
   const [nationalParkFilterOption, setNationalParkFilterOption] = useState("");
+
+  const [filterParksByLocation, setFilterParksByLocation] = useState([
+    nationalParkData,
+  ]);
 
   function getNationalParkData() {
     fetch("./nationalparks.json")
@@ -36,6 +38,13 @@ function NationalParksPage() {
     getParkTypesData();
   }, []);
 
+  function filteredParkLocationFunction(selectedDropdownLocation) {
+    const filteredLocation = nationalParkData.filter((park) =>
+      park.State.includes(selectedDropdownLocation)
+    );
+    setFilterParksByLocation(filteredLocation);
+  }
+
   // console.log(nationalParkData);
 
   return (
@@ -46,12 +55,16 @@ function NationalParksPage() {
           setNationalParkFilterOption={setNationalParkFilterOption}
           parkTypeOptionsList={parkTypeOptionsList}
           nationalParkData={nationalParkData}
+          filteredParkLocationFunction={filteredParkLocationFunction}
         />
       ) : (
         ""
       )}
 
-      <NationalParksDetails nationalParkData={nationalParkData} />
+      <NationalParksDetails
+        nationalParkData={nationalParkData}
+        filterParksByLocation={filterParksByLocation}
+      />
     </div>
   );
 }
