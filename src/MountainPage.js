@@ -24,7 +24,6 @@ function MountainPage() {
       mountain.name.includes(selectedDropdownMountain)
     );
     setFilterMountains(filteredMountain);
-    console.log(filterMountains);
   }
 
   return (
@@ -35,28 +34,25 @@ function MountainPage() {
       />
       <div class="support-grid"></div>
       <div className="band">
-      {filterMountains.map((mountain) => (
-        
-        
-         <div key={mountain.name} className="item-4">
-         <div className="card">
-
-           <article>
-             <h1>{mountain.name}</h1>
-             <div className="thumb"><img
+        {filterMountains.map((mountain) => (
+          <div key={mountain.name} className="item-4">
+            <div className="card">
+              <article>
+                <h1>{mountain.name}</h1>
+                <div className="thumb">
+                  <img
                     src={"./images/mountains/" + mountain.img}
                     alt={mountain.name}
-                  /></div>
-             <p>{mountain.desc}</p>
-             <span>Elevation: {mountain.elevation}</span>
-             <span>Effort: {mountain.effort}</span>
-           </article>
-         </div>
-   </div>
-  
- 
-      ))}
-       </div>
+                  />
+                </div>
+                <p>{mountain.desc}</p>
+                <span>Elevation: {mountain.elevation}</span>
+                <span>Effort: {mountain.effort}</span>
+              </article>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

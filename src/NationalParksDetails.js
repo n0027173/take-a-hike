@@ -1,5 +1,8 @@
-function NationalParksDetails({nationalParkData}) {
-
+function NationalParksDetails({
+  nationalParkData,
+  nationalParkFilterOption,
+  setNationalParkFilterOption,
+}) {
   return (
     <div>
       <table className="table table-striped">
@@ -13,15 +16,15 @@ function NationalParksDetails({nationalParkData}) {
           </tr>
         </thead>
         <tbody>
-          {/* {nationalParkData.map((parkData) => (
-              <tr key={parkData.LocationID}>
-                <th scope="row">{parkData.LocationName}</th>
-                <td>{parkData.Address}</td>
-                <td>{parkData.City}</td>
-                <td>{parkData.State}</td>
-                <td>{parkData.ZipCode}</td>
-              </tr>
-            ))} */}
+          {nationalParkData.map((parkData) => (
+            <tr key={parkData.LocationID}>
+              <th scope="row">{parkData.LocationName}</th>
+              <td>{parkData.Address}</td>
+              <td>{parkData.City}</td>
+              <td>{parkData.State}</td>
+              <td>{parkData.ZipCode}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
