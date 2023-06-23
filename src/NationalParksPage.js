@@ -36,13 +36,21 @@ function NationalParksPage() {
     getParkTypesData();
   }, []);
 
+  // console.log(nationalParkData);
+
   return (
     <div>
-      <NationalParksHeroContent
-        nationalParkFilterOption={nationalParkFilterOption}
-        setNationalParkFilterOption={setNationalParkFilterOption}
-        parkTypeOptionsList={parkTypeOptionsList}
-      />
+      {nationalParkData && nationalParkData[0] ? (
+        <NationalParksHeroContent
+          nationalParkFilterOption={nationalParkFilterOption}
+          setNationalParkFilterOption={setNationalParkFilterOption}
+          parkTypeOptionsList={parkTypeOptionsList}
+          nationalParkData={nationalParkData}
+        />
+      ) : (
+        ""
+      )}
+
       <NationalParksDetails nationalParkData={nationalParkData} />
     </div>
   );

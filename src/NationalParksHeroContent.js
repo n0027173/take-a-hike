@@ -20,86 +20,35 @@ const NationalParksHeroContent = ({
 
   console.log(nationalParkData);
 
-  // {
-  //   nationalParkData.map((parkData) => (
-  //     <tr key={parkData.LocationID}>
-  //       <th scope="row">{parkData.LocationName}</th>
-  //       <td>{parkData.Address}</td>
-  //       <td>{parkData.City}</td>
-  //       <td>{parkData.State}</td>
-  //       <td>{parkData.ZipCode}</td>
-  //     </tr>
-  //   ));
-  // }
-
-  // <div id="mtnsDDLDiv">
-  //   <label htmlFor="mtnsDDL" id="mtnsDDLLabel" className="m-3">
-  //     Select a mountain:
-  //   </label>
-  //   <select id="mtnsDDL" onChange={onChange}>
-  //     <option disabled="">-- Select One --</option>
-  //     {mountains.map((mountain, index) => (
-  //       <option value={mountain.name} key={index}>
-  //         {mountain.name}
-  //       </option>
-  //     ))}
-  //   </select>
-  // </div>;
-
   function RenderSecondInput(filterValue, nationalParkData) {
     switch (filterValue) {
       case "Location":
         // console.log("Location hit Here!");
         // console.log(nationalParkData);
         return (
-          <div>"Returning Location Here!"</div>
-          // <div id="mtnsDDLDiv">
-          //   <label htmlFor="mtnsDDL" id="mtnsDDLLabel" className="m-3">
-          //     Select a Location:
-          //   </label>
-          //   <select id="mtnsDDL" onChange={onChange}>
-          //     <option disabled="">-- Select A Location --</option>
-          //     {nationalParkData.map((park, index) => (
-          //       <option value={park.State} key={index}>
-          //         {park.name}
-          //       </option>
-          //     ))}
-          //   </select>
-          // </div>
+          // <div>"Returning Location Here!"</div>
+          <div id="mtnsDDLDiv">
+            <label htmlFor="mtnsDDL" id="mtnsDDLLabel" className="m-3">
+              Select a Location:
+            </label>
+            <select id="mtnsDDL" onChange={onChange}>
+              <option disabled="">-- Select A Location --</option>
+              {nationalParkData.map((park, index) => (
+                <option value={park.State} key={index}>
+                  {park.name}
+                </option>
+              ))}
+            </select>
+          </div>
         );
 
-      //   <select
-      //     value={nationalParkFilterOption}
-      //     onChange={setNationalParkFilterOption}
-      //   >
-      //     {nationalParkData.map((parkData) => (
-      //       <option value={parkData.State} key={parkData.LocationID}>
-      //         {parkData.State}
-      //       </option>
-      //     ))}
-      //   </select>
-      // );
       case "Park Type":
         // console.log("Park Type hit Here!");
         return "You hit Park Type!";
-      // <select
-      //   value={nationalParkFilterOption}
-      //   onChange={setNationalParkFilterOption}
-      // >
-      //   {parkTypeOptionsList.map((type) => (
-      //     <option value={type} key={type}>
-      //       {type}
-      //     </option>
-      //   ))}
-      // </select>
       default:
         return <div>Hmm, you hit default!</div>;
     }
   }
-
-  useEffect(() => {
-    RenderSecondInput();
-  }, [nationalParkFilterOption]);
 
   return (
     <section className="hero">
@@ -118,7 +67,7 @@ const NationalParksHeroContent = ({
             <option value="Park Type">By Park Type:</option>
           </select>
         </div>
-        {RenderSecondInput(nationalParkFilterOption)}
+        {RenderSecondInput(nationalParkFilterOption, nationalParkData)}
       </div>
     </section>
   );
